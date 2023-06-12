@@ -15,13 +15,20 @@ public static class SummarizeService
 
         string deploymentName = "gpt-3.5-turbo";
 
+        Console.WriteLine("Language: " + model.Language);
+
         // TODO: Multi Language Support
-        // Deutsch
-        // string query = "Fasse mir folgenden Text auf maximal 100 Wörter und auf deutsch zusammen: " + model.Text;
-
-        // Englisch
-        string query = "Summarize the following text for me to a maximum of 100 words and in English: " + model.Text;
-
+        string query = "";
+        if (model.Language == "de")
+        {
+            // Deutsch
+            query = "Fasse mir folgenden Text auf maximal 100 Wörter und auf deutsch zusammen: " + model.Text;
+        }
+        else
+        {
+            // Englisch
+            query = "Summarize the following text for me to a maximum of 100 words and in English: " + model.Text;
+        }
         
         var message = new ChatMessage( ChatRole.User, query);
         List<ChatMessage> messages = new List<ChatMessage> { message };
@@ -31,8 +38,6 @@ public static class SummarizeService
 
         Response<ChatCompletions> completionsResponse = await client.GetChatCompletionsAsync(deploymentName, options);
         string completion = completionsResponse.Value.Choices[0].Message.Content;
-
-        Console.WriteLine($"Chatbot: {completion}");
 
         return completion;
     }

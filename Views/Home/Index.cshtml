@@ -1,4 +1,5 @@
 ﻿@model ShortKnowledge.Models.ShortRequestViewModel;
+@using ShortKnowledge.Helpers;
 @{
     ViewData["Title"] = "Home Page";
 }
@@ -14,6 +15,11 @@
             <label for="URL" class="form-label">URL</label>
             @Html.TextBoxFor(m => m.URL, "", new { @class = "form-control", @disabled = "disabled", @placeholder = "The function is not yet ready" })
             <div id="urlHelp" class="form-text">URL with content to be summarized</div>
+        </div>
+        <div class="mb-3">
+            <label for="Language" class="form-label">Language</label>
+            @Html.DropDownListFor(m => m.Language, new SelectList(LocalizationHelper.Languages, "Code", "Name"), new { @class = "form-control" })
+            <div id="urlHelp" class="form-text">Language into which the article should be translated</div>
         </div>
         <div class="mb-3">
             <label for="Text" class="form-label">Text</label>
