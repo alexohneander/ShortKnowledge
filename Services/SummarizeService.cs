@@ -10,7 +10,7 @@ public static class SummarizeService
     {
         string query = "Fasse mir folgenden Text auf maximal 50 Wörter und auf deutsch zusammen: " + model.Text;
 
-        OpenAIClient client = new OpenAIClient("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");
+        OpenAIClient client = new OpenAIClient("KEY");
 
         string deploymentName = "text-davinci-003";
         string prompt = query;
