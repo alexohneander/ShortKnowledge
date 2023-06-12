@@ -1,0 +1,24 @@
+﻿@model ShortKnowledge.Models.ShortRequestViewModel;
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>With ShortKnowledge you can quickly summarize the content of web pages or documents.</p>
+</div>
+<div class="col-lg-6 mx-auto">
+    @using (Html.BeginForm("Index", "Forms", FormMethod.Post))
+    {
+        <div class="mb-3">
+            <label for="URL" class="form-label">URL</label>
+            @Html.TextBoxFor(m => m.URL, "", new { @class = "form-control", @disabled = "disabled", @placeholder = "The function is not yet ready" })
+            <div id="urlHelp" class="form-text">URL with content to be summarized</div>
+        </div>
+        <div class="mb-3">
+            <label for="Text" class="form-label">Text</label>
+            @Html.TextAreaFor(m => m.Text, 10, 10 , new { @class = "form-control" })
+        </div>
+        <button type="submit" class="btn btn-primary">Summarize</button>
+    }
+</div>
