@@ -1,9 +1,15 @@
+using ShortKnowledge.Helpers;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 
 var app = builder.Build();
+
+var root = Directory.GetCurrentDirectory();
+var dotenv = Path.Combine(root, ".env");
+DotEnv.Load(dotenv);
 
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
