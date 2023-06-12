@@ -14,7 +14,14 @@ public static class SummarizeService
         OpenAIClient client = new OpenAIClient(ApiKey);
 
         string deploymentName = "gpt-3.5-turbo";
-        string query = "Fasse mir folgenden Text auf maximal 100 Wörter und auf deutsch zusammen: " + model.Text;
+
+        // TODO: Multi Language Support
+        // Deutsch
+        // string query = "Fasse mir folgenden Text auf maximal 100 Wörter und auf deutsch zusammen: " + model.Text;
+
+        // Englisch
+        string query = "Summarize the following text for me to a maximum of 100 words and in English: " + model.Text;
+
         
         var message = new ChatMessage( ChatRole.User, query);
         List<ChatMessage> messages = new List<ChatMessage> { message };
