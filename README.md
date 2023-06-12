@@ -17,7 +17,7 @@ Follow these steps to install the application:
  3. Run the command dotnet restore to install the application dependencies.
  4. Run the command dotnet build to compile the application.
  5. Run the command dotnet run to run the application.
- 6. 
+
 ### Usage
 After you have installed the application, you can use it as follows:
 
