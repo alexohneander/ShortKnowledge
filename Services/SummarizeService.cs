@@ -19,10 +19,7 @@ public static class SummarizeService
         var message = new ChatMessage( ChatRole.User, query);
         List<ChatMessage> messages = new List<ChatMessage> { message };
 
-        ChatCompletionsOptions options = new ChatCompletionsOptions
-        {
-            MaxTokens = 100,
-        };
+        ChatCompletionsOptions options = new ChatCompletionsOptions{};
         options.Messages.Add(message);
 
         Response<ChatCompletions> completionsResponse = await client.GetChatCompletionsAsync(deploymentName, options);
