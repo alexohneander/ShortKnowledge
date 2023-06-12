@@ -1,4 +1,5 @@
 # ShortKnowledge
+Use OpenAI to quickly and easily summarize articles and web pages.
 
 ## How to get started
 This guide describes how to install and run the .NET application on your computer.
