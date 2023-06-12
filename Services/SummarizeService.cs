@@ -8,10 +8,10 @@ namespace ShortKnowledge.Services;
 public static class SummarizeService
 {
     private static string ApiKey = Environment.GetEnvironmentVariable("OPENAI_API_KEY") ?? string.Empty; 
-    
+
     public static async Task<string> Summarize(ShortRequestViewModel model)
     {
-        string query = "Fasse mir folgenden Text auf maximal 50 Wörter und auf deutsch zusammen: " + model.Text;
+        string query = "Fasse mir folgenden Text auf maximal 100 Wörter und auf deutsch zusammen: " + model.Text;
 
         OpenAIClient client = new OpenAIClient(ApiKey);
 
